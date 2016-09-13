@@ -1,4 +1,4 @@
-Angular2 CLI Google Charts
+Angular2 Google Charts Example
 =========
 
 ###1.In index.html page include following script in the <header> tags
