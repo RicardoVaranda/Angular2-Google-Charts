@@ -2,11 +2,11 @@ Angular2 Google Charts Example
 =========
 
 ###1.In index.html page include following script in the <header> tags
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>  
-    !important: You want to give this variable(var googleLoaded = false;). This is used to run multiple chart in your jade.
-      var googleLoaded = false;
-      </script>
+     <script src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+     </script>
 ###2.Create / Generate component
 ####if you are using angular-cli do the following command in app folder
     ng g component GoogleChart
