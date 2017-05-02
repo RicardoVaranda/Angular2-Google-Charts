@@ -1,16 +1,21 @@
 Angular2 Google Charts Example
 =========
 
-###1.In index.html page include following script in the <header> tags
+###1.In index.html page include following script in the &lt;header&gt; tags
+
      <script src="https://www.gstatic.com/charts/loader.js"></script>
      <script type="text/javascript">
         // Load the Visualization API and the corechart package.
         google.charts.load('current', {'packages':['corechart']});
      </script>
+     
 ###2.Create / Generate component
 ####if you are using angular-cli do the following command in app folder
-    ng g component GoogleChart
+
+     ng g component GoogleChart
+     
 ###3.Copy this inside the GoogleChartComponent generated
+
     import {Directive,ElementRef,Input,OnInit} from '@angular/core';
     declare var google:any;
     declare var googleLoaded:any;
@@ -48,7 +53,9 @@ Angular2 Google Charts Example
         }
       }
     }
+    
 ###4 In the component you want to include a chart do the following
+
     import {Component, OnInit } from '@angular/core';
     import {GoogleChartComponent} from '../google-chart/google-chart.component';
     
@@ -81,8 +88,11 @@ Angular2 Google Charts Example
       }
     
     }
+    
 ###5 In the html use it like this
+
     <div id="pie_chart" [chartData]="pie_ChartData" [chartOptions] = "pie_ChartOptions" chartType="PieChart" GoogleChart></div>
 
 ## Demo Output
+
   ![angular2-google-chart-v1 0 5](https://cloud.githubusercontent.com/assets/11042288/16228824/f30a4436-37d6-11e6-8d05-bdc8bc090fcc.png)
