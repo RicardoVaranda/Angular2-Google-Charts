@@ -13,23 +13,18 @@ export class GoogleChartComponent implements OnInit {
     this._element = this.element.nativeElement;
   }
   ngOnInit() {
-    setTimeout(() =>{
-      google.charts.load('current', {'packages':['corechart']});
-        setTimeout(() =>{
-          this.drawGraph(this.chartOptions,this.chartType,this.chartData,this._element)
-        },1000);
-      },1000
-    );
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(this.drawGraph);
   }
-  drawGraph (chartOptions,chartType,chartData,ele) {
-    google.charts.setOnLoadCallback(drawChart);
+  drawGraph = () => {
+    
     function drawChart() {
       var wrapper;
       wrapper = new google.visualization.ChartWrapper({
-        chartType: chartType,
-        dataTable:chartData ,
-        options:chartOptions || {},
-        containerId: ele.id
+        chartType: this.chartType,
+        dataTable:this.chartData ,
+        options: this.chartOptions || {},
+        containerId: this._element.id
       });
       wrapper.draw();
     }
