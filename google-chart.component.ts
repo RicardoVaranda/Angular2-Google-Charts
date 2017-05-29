@@ -17,8 +17,6 @@ export class GoogleChartComponent implements OnInit {
     google.charts.setOnLoadCallback(this.drawGraph);
   }
   drawGraph = () => {
-    
-    function drawChart() {
       var wrapper;
       wrapper = new google.visualization.ChartWrapper({
         chartType: this.chartType,
@@ -28,5 +26,4 @@ export class GoogleChartComponent implements OnInit {
       });
       wrapper.draw();
     }
-  }
 }
